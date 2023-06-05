@@ -22,7 +22,13 @@ teclado.forEach((tecla) =>{
 })
 
 function tocaSom (id){
-   document.getElementById(id).play()
+   const elemento = document.getElementById(id)
+
+   if(elemento && elemento.localName === 'audio'){
+    elemento.play();
+   }else {
+    console.log('Elemento não encontrado ou seletor inválido');
+   }
 }
 
 
